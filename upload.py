@@ -68,10 +68,10 @@ class MainWindow(QMainWindow):
         self.main_layout.addLayout(grid_layout)
 
         # Row 1
+        date_edit = QLineEdit()
+        date_edit.setFixedWidth(200)    #setting the width for the text boxes
         grid_layout.addWidget(QLabel("Date"), 1, 0)
-        grid_layout.addWidget(QLineEdit(), 1, 1)
-        grid_layout.addWidget(QLabel("Time"), 1, 2)
-        grid_layout.addWidget(QLineEdit(), 1, 3)
+        grid_layout.addWidget(date_edit, 1, 1)
 
         # Row 2
         grid_layout.addWidget(QLabel("Organization"), 2, 0)
@@ -197,12 +197,18 @@ class MainWindow(QMainWindow):
                 border-color: gold;  /* Set the border color of buttons when pressed */
             }
             QWidget#container_widget {
-                background-color: rgba(255, 255, 255, 0);  /* Fully transparent background */
+                background-color: #EEBC1D;  /* Fully transparent background */
                 border: none;  /* Remove the border */
                 border-radius: 10px;  /* Set the border radius of the container */
                 padding: 150px;  /* Add padding inside the container */
-                min-width: 400px;  /* Set the minimum width of the container */
+                min-width: 100px;  /* Set the minimum width of the container */
                 min-height: 300px;  /* Set the minimum height of the container */
+            }
+            QLineEdit {
+                border: 2px solid #EEBC1D; /* Adjust border color and width as needed */
+                border-radius: 15px; /* Adjust this value to make edges rounder */
+                padding: 5px; /* Add padding to ensure text doesn't touch the rounded edges */
+                min-width: 100px;
             }
         """)
 
